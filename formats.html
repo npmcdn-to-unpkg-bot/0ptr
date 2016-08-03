@@ -10,58 +10,93 @@
 	<title>thghtgrphy</title>
 
     <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,500' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="css/spectre.min.css" />
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="static/css/slide.css" />
+    <link rel="stylesheet" href="static/css/headroom.css" />
+    <link rel="stylesheet" href="static/css/prism.css" />
+    <link rel="stylesheet" href="static/css/spectre.min.css" />
+    <link rel="stylesheet" href="static/css/styles.css" />
+    
 </head>
 
 <body>
-
-    <!-- Single image row -->
-    <div class="columns row">
-        <div class="column col-xs-12"><img src="img/ah.jpg" class="img-responsive image" /></div>
-    </div>	    
-    <!-- End single image row -->
     
-<div class="container">
+<div class="header container columns centered nav" id="header">
+        <div class="column col-xs-2"></div>
+        <div class="column centered col-xs-8">
+            <!-- center-aligned text -->
+            <div class="text-center">
+                <h1>ⵣ</h1>
+                <div class="centered">
+                    <a href="#" class="btn btn-link">PICS</a>
+                    <a href="#" class="btn btn-link">TOOLS</a>
+                    <a href="#" class="btn btn-link">ARCHIVE</a>
+                    <a href="#" class="btn btn-link">ABOUT</a>
+                </div>
+            </div>
+        </div>
+        <div class="column col-xs-2"></div>
+</div>
+
+<div class="container content">
+
+    <!-- Full-screen image -->
+    <div class="columns">
+        <div class="column col-xs-12"><img src="img/ah.jpg" class="img-responsive image" /></div>
+    </div>		
+    <!-- End full-screen image -->
+
+    <!-- Single image -->
     <div class="columns row row-1">
         <div class="column col-xs-12"><img src="img/ah.jpg" class="img-responsive image" /></div>
     </div>			
+    <!-- End single image -->
 
-    <div class="columns row row-1-2">
+    <!-- Image-grid - 1:2 -->
+    <div class="columns row">
         <div class="column col-xs-8"><img src="img/ah.jpg" class="img-responsive image" /></div>
         <div class="column col-xs-4">
             <img src="img/ah.jpg" class="img-responsive image" />
             <img src="img/ah.jpg" class="img-responsive image" />
         </div>
     </div>
+    <!-- End image-grid -->
 
-    <div class="columns row row-2-1">
+    <!-- Image-grid - 2:1 -->
+    <div class="columns row">
         <div class="column col-xs-4">
             <img src="img/ah.jpg" class="img-responsive image" />
             <img src="img/ah.jpg" class="img-responsive image" />
         </div>
         <div class="column col-xs-8"><img src="img/ah.jpg" class="img-responsive image" /></div>
     </div>
+    <!-- End image-grid -->
     
-    <div class="columns row row-2">
+    <!-- Image-grid - 1:1 -->
+    <div class="columns row">
         <div class="column col-xs-6"><img src="img/ah.jpg" class="img-responsive image" /></div>
         <div class="column col-xs-6"><img src="img/ah.jpg" class="img-responsive image" /></div>
     </div>
+    <!-- End image-grid -->
 
-   <div class="columns row row-3">
+    <!-- Image-grid - 1:1:1 -->
+   <div class="columns row">
         <div class="column col-xs-4"><img src="img/ah.jpg" class="img-responsive image" /></div>
         <div class="column col-xs-4"><img src="img/ah.jpg" class="img-responsive image" /></div>
         <div class="column col-xs-4"><img src="img/ah.jpg" class="img-responsive image" /></div>
     </div>
+    <!-- End image-grid -->
 
-   <div class="columns row row-4">
+    <!-- Image-grid - 1:1:1:1 -->
+   <div class="columns row">
         <div class="column col-xs-3"><img src="img/ah.jpg" class="img-responsive image" /></div>
         <div class="column col-xs-3"><img src="img/ah.jpg" class="img-responsive image" /></div>
         <div class="column col-xs-3"><img src="img/ah.jpg" class="img-responsive image" /></div>
         <div class="column col-xs-3"><img src="img/ah.jpg" class="img-responsive image" /></div>
     </div>
+    <!-- End image-grid -->
 
-   <div class="columns row row-6">
+    <!-- Image-grid - 1:1:1:1:1:1 -->
+   <div class="columns row">
         <div class="column col-xs-2"><img src="img/ah.jpg" class="img-responsive image" /></div>
         <div class="column col-xs-2"><img src="img/ah.jpg" class="img-responsive image" /></div>
         <div class="column col-xs-2"><img src="img/ah.jpg" class="img-responsive image" /></div>
@@ -69,7 +104,14 @@
         <div class="column col-xs-2"><img src="img/ah.jpg" class="img-responsive image" /></div>
         <div class="column col-xs-2"><img src="img/ah.jpg" class="img-responsive image" /></div>
     </div>
+    <!-- End image-grid -->
 </div>
-</body>
 
+<!-- IMPORTANT: Replace EXAMPLE with your forum shortname! -->
+<script id="dsq-count-scr" src="//0ptr.disqus.com/count.js" async></script>
+<script src="static/js/prism.js"></script>
+<script src="https://npmcdn.com/headroom.js" type="text/javascript"></script>
+<script src="static/js/scripts.js" type="text/javascript"></script>
+
+</body>
 </html>
