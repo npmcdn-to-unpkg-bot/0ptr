@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<title>thghtgrphy</title>
+
+    <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,500' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="static/css/slide.css" />
+    <link rel="stylesheet" href="static/css/headroom.css" />
+    <link rel="stylesheet" href="static/css/prism.css" />
+    <link rel="stylesheet" href="static/css/spectre.min.css" />
+    <link rel="stylesheet" href="static/css/styles.css" />
+    
+</head>
+
+<body>
+    
+<div class="header container columns centered nav" id="header">
+        <div class="column col-xs-2"></div>
+        <div class="column centered col-xs-8">
+            <!-- center-aligned text -->
+            <div class="text-center">
+                <h1>ⵣ</h1>
+                <div class="centered">
+                    <a href="#" class="btn btn-link">PICS</a>
+                    <a href="#" class="btn btn-link">TOOLS</a>
+                    <a href="#" class="btn btn-link">ARCHIVE</a>
+                    <a href="#" class="btn btn-link">ABOUT</a>
+                </div>
+            </div>
+        </div>
+        <div class="column col-xs-2"></div>
+</div>
+
+<div class="container content">
+
+    <div class="columns centered">
+        <div class="column centered col-xs-12">
+             <img src="media/images/matroschka/01.png" class="img-responsive image " />
+        </div>
+    </div>
+
+    <!-- Text columns -->
+    <div class="columns">
+        <div class="column col-xs-1 col-sm-2 col-md-2 col-lg-3 col-xl-4 hide-xs"></div>
+        <div class="column col-xs-10 col-sm-8 col-md-8 col-lg-6 col-xl-4">
+            <!-- center-aligned text -->
+            <div class="text-center">
+                <h1>Матрёшка</h1>
+                <h2 class="subheadline">Steganography with Python</h2>
+                <p class="ptop date">JULY 25, 2016</p>
+            </div>
+            <!-- center-aligned text -->
+            <div class="text-left">
+                <p><b>Матрёшка</b> [mɐˈtrʲɵʂkə] is a command-line steganography tool written in pure Python. You can use it to hide and encrypt images or text in the least significant bits of pixels in an image. </p>
+                
+                <h2>Encryption</h2>
+                <p>
+                The encryption uses <b>MAC-SHA256</b> to authenticate the hidden data. Therefore the supplied <b>MAC</b> password is hashed with <b>SHA-256</b> digest to generate the <b>HMAC-SHA256</b> key. The <b>MAC</b> and the message data is further encrypted using the <b>XTEA</b> algorithm in <b>CFB</b> mode running <b>32 iterations</b>, before beeing embedded in the image data. The <b>SHA-256</b> hash for the <b>XTEA</b> key is created using the <b>128 high-order bits</b> of the supplied password. A random 8 byte seed is used in the <b>CFB 64 bit block cipher</b>.
+                </p>
+
+                <h2>Decryption</h2>
+                <p>The random seed is appended to the hidden secret and is used with the user supplied password to decrypt the hidden message using <b>XTEA block cipher</b> according to the encryption process. Further the decrypted secret is authenticated by comparing the embeded hmac hash with the <b>HMAC-SHA256</b> of the extracted hidden message and the user supplied mac password.
+                </p>
+
+                <h2>Note</h2>
+                <blockquote>
+                    This is a fun project. Do not use it for serious encryption purposes!
+                </blockquote>
+
+                <h2>Installation</h2>
+                <p>You may want to install <b></b>Matroschka in a virtualenv that has <a href="https://python-pillow.org/">Pillow</a> installed. Clone the <a href="https://github.com/fgrimme/Matroschka">GitHub repo</a> and navigate to the root dir. That's it.             
+                </p>
+                <pre><code class="language-bash">
+pip install Pillow
+git clone git@github.com:fgrimme/Matroschka.git
+cd Matroschka 
+                </code></pre>
+
+                <h2>Usage</h2>
+                <p>Only losless image formats are supported. Therefore It is recommended to use <b>PNG</b> or <b>BMP</b> images to hide your secret. The secret can be either a text file with the <b>.txt</b> extension or an image with the <b>.png</b> extension and format. 
+                </p>
+                <blockquote>
+                    If your image contains transparent pixels, most likely artifacts will be visible after embedding data. This is caused by the manipulation of the least-significant bit in every pixels color channels.
+                </blockquote>
+
+                <h3>Hide Secret</h3>
+                <pre><code class="language-bash">
+python matroschka.py -hide -m mac-password -k password secret image
+                </code></pre>
+
+                <h3>Reveal Secret</h3>
+                <pre><code class="language-bash">
+python matroschka.py -open -m mac-password -k password image
+                </code></pre>
+
+                <h3>Example</h3>
+                <p>matroschka_medium.png gets hidden and encrypted in matroschka_big.png</p>
+                <pre><code class="language-bash">
+python matroschka.py -hide -m foo -k bar resources/matroschka_medium.png resources/matroschka_big.png
+                </code></pre>
+                <p>Decrypting the image will save the extracted image in resources/secret-image.png</p>
+                <pre><code class="language-bash">
+python matroschka.py -open -m foo -k bar resources/matroschka_big.png
+                </code></pre>
+
+                <h2>License</h2>
+                <p>GNU General Public License 3.0</p>
+            </div>
+        </div>
+        <div class="column col-xs-1 col-sm-2 col-md-2 col-lg-3 col-xl-4 hide-xs"></div>
+    </div>
+    <!-- End text columns -->
+
+    <!-- Begin comments -->
+    <div class="columns">
+        <div class="column col-xs-1 col-sm-2 col-md-2 col-lg-3 col-xl-4 hide-xs"></div>
+        <div class="column col-xs-10 col-sm-8 col-md-8 col-lg-6 col-xl-4">
+            <!-- center-aligned text -->
+            <div id="disqus_thread"></div>
+            <script>
+                /**
+                 *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+                 */
+                
+                var disqus_config = function () {
+                    this.page.url = "http://0ptr.pizza";  // Replace PAGE_URL with your page's canonical URL variable
+                    this.page.identifier = "matroschka"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                };
+                
+                (function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW
+                    var d = document, s = d.createElement('script');
+                    
+                    s.src = '//0ptr.disqus.com/embed.js';  // IMPORTANT: Replace EXAMPLE with your forum shortname!
+                    
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+            </div>
+        </div>
+        <div class="column col-xs-1 col-sm-2 col-md-2 col-lg-3 col-xl-4 hide-xs"></div>
+    </div> <!-- End comments -->
+
+<!-- IMPORTANT: Replace EXAMPLE with your forum shortname! -->
+<script id="dsq-count-scr" src="//0ptr.disqus.com/count.js" async></script>
+<script src="static/js/prism.js"></script>
+<script src="https://npmcdn.com/headroom.js" type="text/javascript"></script>
+<script src="static/js/scripts.js" type="text/javascript"></script>
+
+</body>
+</html>
