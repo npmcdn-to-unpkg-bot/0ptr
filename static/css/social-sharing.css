@@ -1,7 +1,6 @@
 .resp-sharing-button {
   display: inline-block;
   border: none;
-  padding: 0.5em;
 }
 
 .resp-sharing-button a {
@@ -15,9 +14,14 @@
 }
 
 .resp-sharing-button__icon svg {
-  width: 4em;
-  height: 4em;
-  padding: .3em;
+  width: 2.2em;
+  height: 2.2em;
+  padding-right: 1em;
+}
+
+.resp-sharing-button__icon img {
+  width: 2em;
+  height: 2em;
 }
 
 .resp-sharing-button__link {
@@ -27,6 +31,7 @@
 
 .resp-sharing-button__wrapper {
   display: inline-block;
+  padding: 2rem 0 2rem 0;
 }
 .resp-sharing-button:hover,
 .resp-sharing-button:active {
