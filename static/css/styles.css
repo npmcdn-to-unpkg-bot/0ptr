@@ -230,3 +230,13 @@ code[class*="language-"], pre[class*="language-"] {
 }
 
 
+/* Overwrite modal spectre.css styles */
+.modal-container .modal-body {
+    max-height: auto;
+    overflow-y: visible;
+    padding: 2.5rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+
